@@ -34,6 +34,11 @@ function iniciarMusicaYDesbloquear() {
         }
     }
     
+    // Forzar reproducción de videos tras interacción
+    document.querySelectorAll('video').forEach(video => {
+        video.play().catch(e => console.log("Video auto-play blocked after interaction", e));
+    });
+    
     // Ocultar contenedor de fecha
     if (contenedorFecha) {
         gsap.to(contenedorFecha, { opacity: 0, duration: 1, display: 'none' });
