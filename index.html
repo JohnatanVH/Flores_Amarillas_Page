@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amor</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌻</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'crema': '#FFFCF2',
+                        'amarillo-pastel': '#FFF2B2',
+                        'dorado': '#D4AF37',
+                        'verde-salvia': '#9CB49F',
+                        'texto-cafe': '#4A3F35'
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['Lora', 'sans-serif'],
+                        'handwriting': ['"Great Vibes"', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Forzar al inicio antes de que el navegador pinte la página
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0,0);
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</head>
+<body class="bg-crema text-texto-cafe font-sans overflow-hidden h-screen antialiased relative">
+    
+    <div id="contenedor-petalos" class="fixed inset-0 pointer-events-none z-50 overflow-hidden"></div>
+
+    <audio id="musica-fondo" loop preload="auto">
+        <source src="assets/musica/cancion_fondo.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="btn-musica" class="fixed bottom-6 right-6 z-50 bg-dorado text-crema p-4 rounded-full shadow-lg hover:scale-110 transition-transform hidden">
+        🎵
+    </button>
+
+    <!-- 1. Hero -->
+    <section id="inicio" class="relative w-full h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden z-10">
+        <div class="absolute inset-0 z-0">
+            <video src="assets/videos/video_1.mov" class="w-full h-full object-cover opacity-80" autoplay loop muted playsinline></video>
+            <div class="absolute inset-0 bg-amarillo-pastel bg-opacity-70"></div>
+        </div>
+
+        <div class="z-10 relative space-y-6">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold tracking-wide text-texto-cafe drop-shadow-md">Eres Mi Mejor Casualidad</h1>
+            <p class="text-2xl md:text-4xl font-handwriting text-texto-cafe mt-4">Para mi flor más hermosa...</p>
+            
+            <div id="contenedor-fecha" class="mt-8 flex flex-col items-center space-y-6 bg-white bg-opacity-80 p-8 rounded-3xl shadow-2xl backdrop-blur-md border border-dorado">
+                <label class="text-2xl font-handwriting text-texto-cafe">Selecciona el día de nuestro inicio...</label>
+                <div class="text-center">
+                    <h3 class="text-xl font-serif text-dorado uppercase tracking-widest font-bold mb-4">Julio 2026</h3>
+                    <div class="grid grid-cols-7 gap-2 md:gap-3 items-center justify-items-center" id="calendario-julio">
+                        <!-- Generado por JS -->
+                    </div>
+                </div>
+                <p id="error-fecha" class="text-red-500 font-sans text-sm hidden font-bold">Ese no es nuestro día especial, mi amor...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Semilla -->
+    <section id="semilla" class="w-full py-24 px-6 md:px-20 relative z-10 bg-crema">
+        <div class="max-w-6xl mx-auto text-center space-y-20">
+            <h2 class="text-4xl md:text-5xl font-serif text-dorado">Donde Todo Comenzó</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="foto-animada bg-white p-4 pb-12 shadow-xl transform -rotate-2 hover:rotate-0 transition-transform rounded-sm mx-auto w-full max-w-sm">
+                    <img src="assets/fotos/foto_1.jpg" alt="Foto 1" class="w-full aspect-[4/3] object-cover bg-gray-200">
+                    <p class="font-handwriting text-3xl mt-4 text-center">El primer instante...</p>
+                </div>
+                <div class="texto-animado text-xl leading-relaxed text-left space-y-6">
+                    <p>A veces la vida te sorprende de la manera más hermosa. Sin buscarlo, sin esperarlo, encontré contigo el lugar donde siempre quise quedarme.</p>
+                    <p>Desde el primer momento, supiste cómo hacer que mi mundo fuera mucho más brillante y mi corazón latiera con más fuerza.</p>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="w-full max-w-2xl mx-auto foto-animada transform rotate-1 bg-white p-4 pb-12 shadow-xl">
+                 <video src="assets/videos/video_2.mov" class="w-full aspect-video object-cover bg-gray-200" autoplay loop muted playsinline></video>
+                <p class="font-handwriting text-3xl mt-4 text-center">Tu mirada, jaja...</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mt-20">
+                <div class="texto-animado text-xl leading-relaxed text-right space-y-6 md:order-1 order-2">
+                    <p>Y así, poco a poco, con cada sonrisa compartida y cada abrazo que reiniciaba mi alma, me di cuenta de que ya no imaginaba mis días sin ti.</p>
+                </div>
+                <div class="foto-animada bg-white p-4 pb-12 shadow-xl transform rotate-2 hover:rotate-0 transition-transform rounded-sm mx-auto w-full max-w-sm md:order-2 order-1">
+                    <img src="assets/fotos/foto_2.jpg" alt="Foto 2" class="w-full aspect-[4/3] object-cover bg-gray-200">
+                    <p class="font-handwriting text-3xl mt-4 text-center">Mi paz...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Aventuras -->
+    <section class="w-full py-24 px-4 md:px-12 relative z-10 bg-amarillo-pastel bg-opacity-30">
+        <div class="max-w-7xl mx-auto text-center space-y-16">
+            <h2 class="text-4xl md:text-5xl font-serif text-dorado">Miles de Momentos</h2>
+            <p class="text-xl max-w-2xl mx-auto font-sans">Cada instante a tu lado es un regalo que atesoro en lo más profundo de mi ser.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="foto-galeria overflow-hidden shadow-md rounded-xl aspect-[3/4] bg-white border-4 border-white">
+                    <img src="assets/fotos/foto_3.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="foto-galeria overflow-hidden shadow-md rounded-xl aspect-square sm:aspect-[3/4] bg-black border-4 border-white">
+                    <video src="assets/videos/video_3.mov" class="w-full h-full object-cover" autoplay loop muted playsinline></video>
+                </div>
+                <div class="foto-galeria overflow-hidden shadow-md rounded-xl aspect-[3/4] bg-white border-4 border-white">
+                    <img src="assets/fotos/foto_4.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="foto-galeria overflow-hidden shadow-md rounded-xl aspect-[4/3] sm:aspect-[3/4] bg-black border-4 border-white">
+                    <video src="assets/videos/video_4.mov" class="w-full h-full object-cover" autoplay loop muted playsinline></video>
+                </div>
+                <div class="foto-galeria overflow-hidden shadow-md rounded-xl aspect-[3/4] md:col-span-2 bg-black border-4 border-white">
+                    <video src="assets/videos/video_5.mov" class="w-full h-full object-cover" autoplay loop muted playsinline></video>
+                </div>
+                <div class="foto-galeria overflow-hidden shadow-md rounded-xl bg-white border-4 border-white h-fit">
+                    <img src="assets/fotos/foto_5.jpg" class="w-full h-auto">
+                </div>
+                <div class="foto-galeria overflow-hidden shadow-md rounded-xl aspect-[3/4] bg-black border-4 border-white">
+                    <video src="assets/videos/video_6.mov" class="w-full h-full object-cover" autoplay loop muted playsinline></video>
+                </div>
+                <div class="foto-galeria overflow-hidden shadow-md rounded-xl md:col-span-2 bg-white border-4 border-white h-fit">
+                    <img src="assets/fotos/foto_6.jpg" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Video 7 -->
+    <section class="w-full py-24 px-6 relative z-10 bg-crema">
+        <div class="max-w-4xl mx-auto text-center space-y-12">
+            <h2 class="text-4xl md:text-5xl font-serif text-dorado">Lo mejor de mi vida...</h2>
+            <p class="font-handwriting text-3xl">...es poder compartirla contigo.</p>
+            <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-black">
+                <video src="assets/videos/video_7.mov" class="w-full h-full object-cover" autoplay loop muted playsinline></video>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. La Carta -->
+    <section class="w-full py-32 px-6 relative z-10 bg-verde-salvia bg-opacity-10">
+        <div class="max-w-3xl mx-auto">
+            <div class="glass-card p-10 md:p-16 rounded-3xl shadow-xl relative overflow-hidden border-2 border-white">
+                <h3 class="font-serif text-3xl mb-8 text-dorado text-center md:text-left">Mi amor,</h3>
+                <div class="space-y-6 font-sans text-lg leading-relaxed text-texto-cafe">
+                    <p>Quería hacer algo especial para ti, algo que te recordara lo mucho que significas para mí todos los días. No importa cuánto tiempo pase, mi admiración y mi cariño por ti solo siguen creciendo.</p>
+                    <p>Eres mi refugio, mi inspiración y esa persona maravillosa que me hace querer ser mejor cada mañana.</p>
+                    <p>Gracias por tu paciencia, por tus sonrisas y por iluminar mi vida entera con el simple hecho de existir. Prometo cuidarte, escucharte y estar a tu lado en cada paso de nuestro camino.</p>
+                </div>
+                <p class="font-handwriting text-4xl mt-12 text-right text-dorado">Para siempre,<br>Yo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Flores Amarillas -->
+    <section class="w-full h-[80vh] flex flex-col items-center justify-center text-center px-6 relative z-10">
+        <div class="space-y-8 max-w-4xl">
+            <div class="text-7xl md:text-9xl mb-8 animate-pulse" style="animation-duration: 3s;">
+                🌻
+            </div>
+            <h2 class="text-5xl md:text-7xl font-serif text-dorado drop-shadow-sm">Sabes que siempre te daré tus flores amarillas.</h2>
+            <p class="font-handwriting text-5xl mt-8">Te amo, mi Chiquita.</p>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

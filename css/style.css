@@ -1,0 +1,63 @@
+body {
+    scroll-behavior: smooth;
+}
+
+/* Efecto Polaroid */
+.foto-animada {
+    border-radius: 4px;
+    border: 12px solid white;
+    border-bottom: 4rem solid white;
+}
+
+.glass-card {
+    background: rgba(255, 252, 242, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    will-change: transform, opacity;
+}
+
+/* Pétalos suaves elegantes */
+.petalo-suave {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #FFF2B2;
+    border-radius: 50% 0 50% 50%; /* Forma de pétalo */
+    opacity: 0.5;
+    pointer-events: none;
+    animation: caer linear infinite;
+    z-index: 50;
+    will-change: transform, opacity;
+    box-shadow: 0 0 10px rgba(255, 242, 178, 0.5);
+}
+
+@keyframes caer {
+    0% {
+        transform: translate3d(0, -10vh, 0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.5;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate3d(20vw, 110vh, 0) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #FFFCF2; 
+}
+::-webkit-scrollbar-thumb {
+    background: #FFF2B2; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #D4AF37; 
+}
